@@ -13,7 +13,7 @@ String CHAR_POOO = "\\uD83D\\uDCA9";
 String CHAR_LOVE = "\\uD83D\\uDE0D";
 
 String get_pushbulet_token(){
-  switch (user) {
+  switch (currentUser) {
     case 0:
       return token_pushbullet_user1;
       break;
