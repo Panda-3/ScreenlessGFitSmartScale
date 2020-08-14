@@ -11,11 +11,18 @@
 # Compiling
 
 To build with VS code ensure all files are added to "forcedInclude" in c_cpp_properties.json
-```
-"forcedInclude": [
-  "${workspaceFolder}/SmartScale/Google_Messages.ino",
-  "${workspaceFolder}/SmartScale/GoogleFit.ino",
-  "${workspaceFolder}/SmartScale/Scale.ino",
-  "${workspaceFolder}/SmartScale/User.ino"
-]
+```javascript
+{
+    "configurations": [
+        {
+            "forcedInclude": [
+                "${workspaceFolder}/SmartScale/Google_Messages.ino",
+                "${workspaceFolder}/SmartScale/GoogleFit.ino",
+                "${workspaceFolder}/SmartScale/Scale.ino",
+                "${workspaceFolder}/SmartScale/User.ino"
+            ]
+        }
+    ],
+    "version": 4
+}
 ```
