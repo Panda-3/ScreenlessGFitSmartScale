@@ -1,6 +1,6 @@
 # Smart Scale
 
-Project originally made by [davidevertuani](https://github.com/davidevertuani) Project info [hackster.io](https://www.hackster.io/daveVertu/make-a-screen-less-google-fit-connected-smart-scale-9a5934)
+Project originally made by [dave_vetru](https://github.com/davidevertuani) Project info [hackster.io](https://www.hackster.io/daveVertu/make-a-screen-less-google-fit-connected-smart-scale-9a5934)
 
 ### Tasks
 
