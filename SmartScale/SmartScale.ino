@@ -190,7 +190,7 @@ void checkWeight() {
       sleep();
 
     } else {                                                                 //if no user has been selected (no button pressed -> currentUser = -1 -> generic user, do not post to google fit)
-      //ssend_push("generic", "Scale - Generic", "Weight: " + String(post_weight, 2) + " kg.\n" + getJoke());
+      //send_push("generic", "Scale - Generic", "Weight: " + String(post_weight, 2) + " kg.\n" + getJoke());
       sleep();
     }
   }
