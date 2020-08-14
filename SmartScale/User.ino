@@ -1,4 +1,4 @@
-/multi-user support
+//multi-user support
 String token_google_user1 = "[TOKEN_USER_1]";
 String token_google_user2 = "[TOKEN_USER_2]";
 String token_google_user3 = "[TOKEN_USER_3]";

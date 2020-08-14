@@ -73,7 +73,7 @@ int postWeight(String mweight) {
   if (tokenStatus < 0) return tokenStatus;
 
   WiFiClientSecure client;
-  PRTLN("\nPOST WEIGHT\n\nConnecting to host\n");
+  Serial.println("\nPOST WEIGHT\n\nConnecting to host\n");
 
   if (!client.connect(host_google, httpPort)) {
     Serial.println("Connection failed");
@@ -92,7 +92,7 @@ int postWeight(String mweight) {
                    mbody + "\n";
 
   client.println(payload);
-  PRTLN(payload);
+  Serial.println(payload);
 
   unsigned long timeout = millis();
   while (client.available() == 0) {

@@ -1,11 +1,10 @@
 #include <ESP8266WiFi.h>
 #include <WiFiClientSecure.h>
-#include <ArduinoJson.h>
 #include <WiFiUdp.h>
 #include <ArduinoOTA.h>
 #include <EEPROM.h>
 #include "HX711.h"
-
+#include <ArduinoJson.h>
 //SCALE
 HX711 scale;
 #define WEIGHT_BUFFER_SIZE 15
@@ -42,7 +41,7 @@ const int httpPort = 443;
 #define LED0 14 //D5
 #define LED1 12 //D6
 #define LED2 13 //D7
-#define LED3 D3 //D3
+#define LED3 D4 //D3
 #define INTERRUPT_PIN D8
 #define DISPLAY_SDA_PIN D5
 #define DISPLAY_SCL_PIN D6
@@ -92,7 +91,7 @@ void setup() {
   int messTokenStatus = refreshTokenMessages();
 
   if (mtime == 0 || messTokenStatus < 0) {
-    send_push("dev", "NTP error", "NTP didn't respond.");
+    //send_push("dev", "NTP error", "NTP didn't respond.");
     ESP.deepSleep(0);
   }
 
@@ -191,7 +190,7 @@ void checkWeight() {
       sleep();
 
     } else {                                                                 //if no user has been selected (no button pressed -> currentUser = -1 -> generic user, do not post to google fit)
-      send_push("generic", "Scale - Generic", "Weight: " + String(post_weight, 2) + " kg.\n" + getJoke());
+      //ssend_push("generic", "Scale - Generic", "Weight: " + String(post_weight, 2) + " kg.\n" + getJoke());
       sleep();
     }
   }
@@ -220,13 +219,13 @@ void OTA_setup() {                                                            //
 
   ArduinoOTA.onStart([]() {
     allLedOff();
-    send_push("dev", "Update", "Begin uploading");
+    //send_push("dev", "Update", "Begin uploading");
     Serial.println("Start");
   });
 
   ArduinoOTA.onEnd([]() {
     updating = false;
-    send_push("dev", "Update", "Fnished uploading");
+    //send_push("dev", "Update", "Fnished uploading");
     Serial.println("\nEnd");
   });
   

@@ -4,7 +4,7 @@ bool send_push(String title, String message) {
 
   //send_push_gmessages(topic, title, message);  //uncomment the line to use Firebase Cloud Messages Instead
 
-  send_push_pushbullet();
+  //send_push_pushbullet();
 }
 
 void send_push_pushbullet(String title, String message) {
