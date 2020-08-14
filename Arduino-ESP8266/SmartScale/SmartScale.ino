@@ -5,7 +5,7 @@
 #include <ArduinoOTA.h>
 #include <EEPROM.h>
 #include "HX711.h"
-
+//test
 //SCALE
 HX711 scale;
 #define WEIGHT_BUFFER_SIZE 15
