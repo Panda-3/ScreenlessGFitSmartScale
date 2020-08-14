@@ -41,7 +41,7 @@ const int httpPort = 443;
 #define LED0 14 //D5
 #define LED1 12 //D6
 #define LED2 13 //D7
-#define LED3 D4 //D3
+#define LED3 D3 //D3
 #define INTERRUPT_PIN D8
 #define DISPLAY_SDA_PIN D5
 #define DISPLAY_SCL_PIN D6
@@ -91,7 +91,7 @@ void setup() {
   int messTokenStatus = refreshTokenMessages();
 
   if (mtime == 0 || messTokenStatus < 0) {
-    //send_push("dev", "NTP error", "NTP didn't respond.");
+    send_push("dev", "NTP error", "NTP didn't respond.");
     ESP.deepSleep(0);
   }
 
@@ -150,7 +150,7 @@ void loop() {
 void checkSleep() {
   if (millis() > 35000) {
     String body = String("Peso: ") + weight + " kg;  range: " + get_range();
-    send_push("Errore - inaffidabile", body);
+    send_push("Errore", "inaffidabile", body);
     sleep();                                                //notify user before sleeping
   }
 }
@@ -184,13 +184,13 @@ void checkWeight() {
       
       if (postStatus > 0) {                                                  //if a correct response from google fit has been received
         String body = String("New weight registered: ") + String(post_weight, 2) + " kg.\n" + getPhrase(post_weight);
-        send_push(String("Scale - ") + getTopic(), body);
+        send_push("generic", String("Scale - ") + getTopic(), body);
       }                                                                      //if NOT a correct response...
-      else send_push("Google Fit Error", "Weight of " + String(post_weight, 2) + " kg acquired but not uploaded. Error n.: " + postStatus);
+      else send_push("Google Fit Error", "", "Weight of " + String(post_weight, 2) + " kg acquired but not uploaded. Error n.: " + postStatus);
       sleep();
 
     } else {                                                                 //if no user has been selected (no button pressed -> currentUser = -1 -> generic user, do not post to google fit)
-      //send_push("generic", "Scale - Generic", "Weight: " + String(post_weight, 2) + " kg.\n" + getJoke());
+      send_push("generic", "Scale - Generic", "Weight: " + String(post_weight, 2) + " kg.\n" + getJoke());
       sleep();
     }
   }
@@ -219,13 +219,13 @@ void OTA_setup() {                                                            //
 
   ArduinoOTA.onStart([]() {
     allLedOff();
-    //send_push("dev", "Update", "Begin uploading");
+    send_push("dev", "Update", "Begin uploading");
     Serial.println("Start");
   });
 
   ArduinoOTA.onEnd([]() {
     updating = false;
-    //send_push("dev", "Update", "Fnished uploading");
+    send_push("dev", "Update", "Fnished uploading");
     Serial.println("\nEnd");
   });
   
