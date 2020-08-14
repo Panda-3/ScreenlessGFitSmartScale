@@ -5,7 +5,7 @@ Project originally made by [davidevertuani](https://github.com/davidevertuani) P
 ### Tasks
 
 - ✔️ Get original code to build
-- ❌ Clean up original code for final release
+- ✔️ Clean up original code for final release ([Available here](https://github.com/Panda-3/SmartScale/releases/tag/v1.0-original))
 - ❌ Adapt code to work with e-ink display
 
 ## Required Libs
