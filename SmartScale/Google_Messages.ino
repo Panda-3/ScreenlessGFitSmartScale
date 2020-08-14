@@ -3,10 +3,10 @@ bool send_push(String topic, String title, String message) {
 
   //send_push_gmessages(topic, title, message);  //uncomment the line to use Firebase Cloud Messages Instead
 
-  //send_push_pushbullet();
+  //send_push_pushbullet(topic, title, message);
 }
 
-void send_push_pushbullet(String title, String message) {
+void send_push_pushbullet(String topic, String title, String message) {
   const int httpPort = 443;
   String host = "api.pushbullet.com";
 
