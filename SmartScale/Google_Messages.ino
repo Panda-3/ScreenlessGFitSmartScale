@@ -1,5 +1,4 @@
 bool send_push(String topic, String title, String message) {
-  topic.toLowerCase();
 
   //send_push_gmessages(topic, title, message);  //uncomment the line to use Firebase Cloud Messages Instead
 
