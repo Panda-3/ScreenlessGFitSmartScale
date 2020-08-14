@@ -4,9 +4,9 @@ Project originally made by [davidevertuani](https://github.com/davidevertuani) P
 
 ### Tasks
 
-- [x] Get original code to build
-- [ ] Clean up original code for final release
-- [ ] Adapt code to work with e-ink display
+- ✔️ Get original code to build
+- ❌ Clean up original code for final release
+- ❌ Adapt code to work with e-ink display
 
 ## Required Libs
 
