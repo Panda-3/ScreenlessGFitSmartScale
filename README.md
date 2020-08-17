@@ -17,7 +17,7 @@ Project originally made by [dave_vetru](https://github.com/davidevertuani) Proje
 
 ## Building
 
-To build with VS code ensure all files are added to "forcedInclude" in c_cpp_properties.json
+To build with VS code ensure all files are added to "forcedInclude" in c_cpp_properties.json, this stops any syntax errors showing up.
 ```javascript
 {
     "configurations": [
