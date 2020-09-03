@@ -12,8 +12,9 @@ Project originally made by [dave_vetru](https://github.com/davidevertuani) Proje
 
 * [ESP8266 for Arduino](https://github.com/esp8266/Arduino)
 * [HX711](https://github.com/bogde/HX711)
+* [GxEPD](https://github.com/ZinggJM/GxEPD)
 * [ArduinoJson](https://github.com/bblanchon/ArduinoJson)
-* [epd-library-arduino](https://github.com/soonuse/epd-library-arduino)
+
 
 ## Building
 
